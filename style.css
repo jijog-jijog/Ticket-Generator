@@ -1,0 +1,254 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    text-align: center;
+    color: hsl(252, 6%, 83%);
+    padding: 20px;
+    position: relative;
+    min-height: 100vh;
+    background: url('assests/images/background-desktop.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+
+.background-svg {
+    position: absolute;
+    z-index: -1; 
+
+}
+
+#logo-full{
+    margin-top: 20px;
+}
+.circle {
+    top: 10px;
+    left: 10px;
+    width: 100px;
+}
+
+.lines {
+    bottom: 0px;
+    right: 0px;
+    margin: 0px;
+    width: 150px;
+    display: flex;
+    
+}
+
+.squiggly-top {
+    right: 0;
+    width: 25%;
+}
+
+.squiggly-bottom-desktop {
+    bottom: 0;
+    width: 50%;
+    left: 0;
+}
+
+/* Main Content Container */
+.container {
+    max-width: 450px;  /* Increased width for better spacing */
+    background: transparent;
+    padding: 30px;
+    border-radius: 8px;
+    margin: auto;
+    text-align: center; /* Align form text properly */
+}
+
+#conf{
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between elements */
+}
+
+label {
+    margin-top: 2px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    text-align: left; /* Align text to the left */
+}
+
+/* Input & Button Styles */
+input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: transparent; /* Slight transparency */
+    font-size: 16px;
+    color: hsl(252, 6%, 83%);
+}
+
+button {
+    padding: 20px;
+    background: hsl(7, 71%, 60%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px; /* Move closer to input */
+}
+
+/* Hide Elements */
+.hidden {
+    display: none;
+}
+
+/* File Upload Styles */
+.file-upload {
+    position: relative;
+    border: 2px dashed #ccc;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+#file{
+    font-size: 14px;
+}
+.file-upload:hover {
+    border-color: hsl(7, 71%, 60%);
+}
+
+.file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.upload-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.file-upload-input {
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.github-info{
+    display: flex;
+    flex-direction: column;
+}
+
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('assets/fonts/Inconsolata-ExtraBold.ttf') format('truetype');
+    font-weight: 800; /* ExtraBold */
+    font-style: normal;
+}
+/* Ticket Container */
+.ticket-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Ticket Wrapper */
+.ticket {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+    justify-content: center;
+    width: 600px; /* Fixed size for consistency */
+    height: 280px;
+    background: url('assests/images/pattern-ticket.svg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+}
+.ticket-content {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6em; 
+    margin-top: 4em;/* Align elements in a row */
+}
+
+/* Ticket Header (Logo) */
+.ticket-header {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Event Date */
+.shabi {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: left;
+}
+
+/* Avatar Image */
+
+
+.avatar {
+    width: 80px; /* Adjust avatar size */
+    height: 80px;
+    border-radius: 25px; /* Rounded corners */
+    position: absolute;
+    bottom: 20px; /* Position from the bottom */
+    left: 20px; /* Position from the left */
+}
+
+/* Name Styling */
+.name-ticket {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+}
+/* GitHub Info */
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+.info p{
+    margin: 0;
+}
+.git-img {
+    width: 20px;
+    height: 20px;
+}
+
+.github-username {
+    font-size: 16px;
+    color: white;
+    
+}
+
+.bottom {
+    display:flex;
+    position: absolute;
+    bottom: 20px; /* Align with avatar's bott;om */
+    left: 120px; /* Position to the right of the avatar */
+    color: white;
+}
+
+
+

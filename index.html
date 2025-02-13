@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background SVGs -->
+    <img src="assests\images\logo-full.svg" class="logo-full">
+    <img src="assests\images\pattern-circle.svg" class="background-svg circle">
+    <img src="assests\images\pattern-lines.svg" class="background-svg lines">
+    <img src="assests\images\pattern-squiggly-line-top.svg" class="background-svg squiggly-top">
+    <img src="assests\images\pattern-squiggly-line-bottom-desktop.svg" class="background-svg squiggly-bottom-desktop">
+
+    <!-- Conference Registration Form -->
+    <div class="container">
+        <h1>Your Journey to Coding Conf 2025 Starts Here</h1>
+        <p>Secure your spot at next year's biggest coding conference.</p>
+
+        <section id="registration-section">
+            <form id="registration-form">
+                <label id="avater" for="avatar">Upload Avatar</label>
+                <div class="file-upload">
+                    <label for="avatar" class="file-upload-label">
+                        <img src="assests/images/icon-upload.svg" alt="Upload Icon" class="upload-icon">
+                        <span>Drag & drop your avatar here, or click to select a file</span>
+                    </label>
+                    <input type="file" id="avatar" name="avatar" class="file-upload-input">
+                </div>
+                <span class="error-message"></span>
+
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message"></span>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message"></span>
+
+                <label for="github">GitHub Username</label>
+                <input type="text" id="github" name="github" required>
+                <span class="error-message"></span>
+
+                <button type="submit">Generate My Ticket</button>
+            </form>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
