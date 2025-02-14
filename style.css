@@ -5,7 +5,7 @@ body {
     padding: 20px;
     position: relative;
     min-height: 100vh;
-    background: url('assests/images/background-desktop.png') no-repeat center center fixed;
+    background: url('asests/images/background-desktop.png') no-repeat center center fixed;
     background-size: cover;
 }
 
@@ -278,17 +278,19 @@ button:active {
     background-position: center;
     background-repeat: no-repeat;  
 }
-
 .file-upload:hover {
     border-color: hsl(7, 71%, 60%);
     border-width: 4px; /* Expand the dashed line */
+    transition: border-color 0.2s ease-in-out, border-width 0.2s ease-in-out; /* Smooth and fast transition */
 }
 
 #file{
     font-size: 14px;
 }
+
 .file-upload:hover {
     border-color: hsl(7, 71%, 60%);
+    transition: border-color 0.2s ease-in-out; /* Smooth and fast transition */
 }
 
 .file-upload-label {
@@ -321,7 +323,7 @@ button:active {
 
 @font-face {
     font-family: 'Inconsolata';
-    src: url('assets/fonts/Inconsolata-ExtraBold.ttf') format('truetype');
+    src: url('asests/fonts/Inconsolata-ExtraBold.ttf') format('truetype');
     font-weight: 800; /* ExtraBold */
     font-style: normal;
 }
@@ -370,7 +372,7 @@ button:active {
     justify-content: center;
     width: 600px; /* Fixed size for consistency */
     height: 280px;
-    background: url('assests/images/pattern-ticket.svg') no-repeat center center;
+    background: url('asests/images/pattern-ticket.svg') no-repeat center center;
     background-size: 100% 100%;
     margin-top: 30px;
     /*background-size: cover;

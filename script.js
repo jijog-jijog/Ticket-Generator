@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p>the run-up to the event.</p>
             </div>
             <div class="ticket">
-            <img src="assests/images/logo-full.svg" alt="Conference Logo" class="ticket-logo">
+            <img src="asests/images/logo-full.svg" alt="Conference Logo" class="ticket-logo">
             <p class="Date">${formattedDate} / Jijo,RZ</p>
             <div class="ticket-number">
                 <p id="ticketnumber">#${ticketNumber}</p> 
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="github-info">
                 <p class="name-ticket">${name}</p>
                 <div class="info">
-                    <img src="assests/images/icon-github.svg" class="git-img" alt="GitHub Icon">
+                    <img src="asests/images/icon-github.svg" class="git-img" alt="GitHub Icon">
                     <p class="github-username">${github}</p>
                 </div>
                 </div>
