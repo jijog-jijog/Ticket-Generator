@@ -21,8 +21,8 @@ body {
     margin-bottom: 30px;
 }
 
-#logo-full{
-    margin-top: 20px;
+.logo-full{
+    margin-bottom: 10px;
 }
 .circle {
     top: 10px;
@@ -52,13 +52,93 @@ body {
 
 /* Main Content Container */
 .container {
-    max-width: 450px;  /* Increased width for better spacing */
+    max-width: 450px;
     background: transparent;
     padding: 30px;
     border-radius: 8px;
     margin: auto;
-    text-align: center; /* Align form text properly */
+    text-align: center;
+    overflow: hidden;
+    position: relative;
 }
+
+/* Fading Effect on Left & Right */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 20%; /* Controls the fade width */
+    height: 100%;
+    background: linear-gradient(to right, black, transparent);
+    z-index: 2;
+    border-radius: 20px;
+}
+
+.container::before {
+    left: 0;
+}
+
+.container::after {
+    right: 0;
+    transform: scaleX(-1);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: inline-block;
+    opacity: 0;
+    transform: scaleX(0);
+    animation: revealText 2s ease-in-out infinite;
+}
+
+/* Continuous Reveal Animation */
+@keyframes revealText {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scaleX(1.1);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+}
+
+/* Fading Shine Effect */
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+    animation: shineEffect 2s ease-in-out infinite;
+    filter: blur(10px); /* Fading border effect */
+}
+
+/* Smooth Infinite Light Sweep */
+@keyframes shineEffect {
+    0% {
+        left: -150%;
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        left: 150%;
+        opacity: 0;
+    }
+}
+
 
 #conf{
     font-size: 15px;
@@ -99,16 +179,79 @@ input {
     font-size: 16px;
     color: hsl(252, 6%, 83%);
 }
-
 button {
-    padding: 20px;
-    background: hsl(7, 71%, 60%);
+    padding: 20px 40px;
+    background: linear-gradient(180deg, hsl(7, 71%, 60%) 0%, hsl(7, 71%, 50%) 100%);
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.5s ease-in-out, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(255, 69, 58, 0.5);
 }
+
+/* Glossy Reflection Effect */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top, rgba(255, 255, 255, 0.3) 10%, transparent 70%);
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Hover Effect: Smooth Color Shift & Shadow Glow */
+button:hover {
+    background: linear-gradient(45deg, hsl(7, 71%, 60%), hsl(44, 100%, 50%), hsl(160, 100%, 50%));
+    background-size: 300%;
+    animation: colorShift 1.5s ease-in-out infinite;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(255, 200, 0, 0.6);
+}
+
+/* Continuous Gradient Animation */
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Fog Effect */
+button::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 80%);
+    animation: fogMove 4s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes fogMove {
+    0% { transform: translateX(-10%) translateY(-10%) scale(1); }
+    50% { transform: translateX(10%) translateY(10%) scale(1.1); }
+    100% { transform: translateX(-10%) translateY(-10%) scale(1); }
+}
+
+/* Blinking Effect on Click */
+button:active {
+    animation: blinkEffect 0.3s ease-in-out 3;
+}
+
+@keyframes blinkEffect {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
 /* Error Message */
 .error-message {
     color: red;
@@ -127,13 +270,18 @@ button {
     border: 2px dashed #ccc;
     background: rgba(255, 255, 255, 0.1); /* Slight transparency */
     border-radius: 10px;
-    height: 120px;/* Ensure a consistent size */
+    height: 120px; /* Ensure a consistent size */
     text-align: center;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, border-width 0.3s;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;  
+}
+
+.file-upload:hover {
+    border-color: hsl(7, 71%, 60%);
+    border-width: 4px; /* Expand the dashed line */
 }
 
 #file{

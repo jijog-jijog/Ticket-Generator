@@ -48,19 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Read avatar file (if uploaded)
-        let avatarURL = "default-avatar.png"; // Fallback avatar
-        if (avatarInput) {
-            const reader = new FileReader();
-            reader.onload = function (e) {
-                avatarURL = e.target.result;
-                generateTicket(name, email, github, avatarURL);
-            };
-            reader.readAsDataURL(avatarInput);
-        } else {
+    let avatarURL = "default-avatar.png"; // Fallback avatar
+    if (avatarInput) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            avatarURL = e.target.result;
             generateTicket(name, email, github, avatarURL);
-        }
-    });
-    //
+            alert(`🎉 Ticket Generated Successfully!\n\nName: ${name}\nEmail: ${email}\nGitHub: ${github}`);
+        };
+        reader.readAsDataURL(avatarInput);
+    } else {
+        generateTicket(name, email, github, avatarURL);
+    }
+});
 
     // Function to validate email
     function validateEmail(email) {
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
             <div class="ticket">
             <img src="assests/images/logo-full.svg" alt="Conference Logo" class="ticket-logo">
-            <p class="Date">${formattedDate} / Jijo,TX</p>
+            <p class="Date">${formattedDate} / Jijo,RZ</p>
             <div class="ticket-number">
                 <p id="ticketnumber">#${ticketNumber}</p> 
             </div>
@@ -110,17 +110,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Add event listener for print button
         document.getElementById("print-button").addEventListener("click", function () {
-            const printContents = ticketContainer.innerHTML;
+            const printContents = document.querySelector(".ticket").innerHTML;
             const originalContents = document.body.innerHTML;
 
-            document.body.innerHTML = printContents;
+            document.body.innerHTML = `
+            <div class="ticket" style="background-image: url('assets/images/ticket-background.png'); background-size: cover;">
+                ${printContents}
+            </div>`;
             window.print();
             document.body.innerHTML = originalContents;
             location.reload(); // Reload the page to restore original content
         });
+    
+
 
         // Hide the form and show the ticket
         document.querySelector(".container").classList.add("hidden");
         ticketContainer.classList.remove("hidden");
     }
+
+    
 });
