@@ -16,6 +16,11 @@ body {
 
 }
 
+#secure-content{
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
 #logo-full{
     margin-top: 20px;
 }
@@ -68,19 +73,29 @@ form {
 }
 
 label {
-    margin-top: 2px;
     font-weight: bold;
-    margin-bottom: 5px;
     display: block;
     text-align: left; /* Align text to the left */
 }
 
+.info-icon{
+    display: flex;
+    align-items: center;
+
+}
+
+.info-icon h3{
+    font-size: 15px;
+    padding-left: 10px;
+    padding-bottom: 0px;
+
+}
 /* Input & Button Styles */
 input {
     padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 6px;
-    background: transparent; /* Slight transparency */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
     font-size: 16px;
     color: hsl(252, 6%, 83%);
 }
@@ -110,11 +125,15 @@ button {
 .file-upload {
     position: relative;
     border: 2px dashed #ccc;
-    border-radius: 6px;
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slight transparency */
+    border-radius: 10px;
+    height: 120px;/* Ensure a consistent size */
     text-align: center;
     cursor: pointer;
     transition: border-color 0.3s;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;  
 }
 
 #file{
@@ -135,6 +154,7 @@ button {
     width: 50px;
     height: 50px;
     margin-bottom: 10px;
+    padding-top: 20px;
 }
 
 .file-upload-input {
@@ -166,6 +186,33 @@ button {
     padding: 20px;
 }
 
+.heading{
+    width: 2000px;
+}
+
+.heading h1{
+    font-size: 60px;
+    color: white;
+    margin-top: 20px;
+}
+
+.heading h2{
+    font-size: 40px;
+    color: white;
+}
+
+#email-name{
+    font-size: 20px;
+    color: rgb(231, 128, 128);
+    margin-top: 20px;
+}
+
+#email-content{
+    font-size: 15px;
+    color: white;
+    margin-top: 20px;
+}
+
 /* Ticket Wrapper */
 .ticket {
     position: relative;
@@ -176,9 +223,18 @@ button {
     width: 600px; /* Fixed size for consistency */
     height: 280px;
     background: url('assests/images/pattern-ticket.svg') no-repeat center center;
-    background-size: cover;
-    padding: 20px;
+    background-size: 100% 100%;
+    margin-top: 30px;
+    /*background-size: cover;
+    padding: 20px;*/
 }
+
+.ticket-logo{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
 .ticket-content {
     display: flex;
     flex-direction: row;
@@ -195,11 +251,12 @@ button {
 }
 
 /* Event Date */
-.shabi {
+.Date {
     font-size: 14px;
     font-weight: bold;
     color: white;
     text-align: left;
+    margin-left: 20px;
 }
 
 /* Avatar Image */
@@ -214,6 +271,11 @@ button {
     left: 20px; /* Position from the left */
 }
 
+.github-info{
+    margin-left: 20px;
+    
+}
+
 /* Name Styling */
 .name-ticket {
     font-size: 20px;
@@ -221,6 +283,14 @@ button {
     color: white;
     margin: 0;
 }
+
+#ticket-nameing{
+    background: linear-gradient(90deg, #FF6A3D, #fffefd);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* GitHub Info */
 .info {
     display: flex;
@@ -238,9 +308,29 @@ button {
 
 .github-username {
     font-size: 16px;
-    color: white;
+    background: linear-gradient(90deg, #FF6A3D, #FF9A8B);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
     
 }
+.ticket-number {
+    height: 200px;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 20px;
+}
+
+#ticketnumber {
+    font-size: 14px;
+    font-size: larger;
+    color: rgb(136, 132, 132);
+    transform: rotate(90deg);
+}
+
 
 .bottom {
     display:flex;
@@ -248,6 +338,20 @@ button {
     bottom: 20px; /* Align with avatar's bott;om */
     left: 120px; /* Position to the right of the avatar */
     color: white;
+}
+
+ .bottom-print{
+   margin-top: 10px;   
+}
+
+.bottom-print button{
+    padding: 10px;
+    background: hsl(7, 71%, 60%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
 }
 
 

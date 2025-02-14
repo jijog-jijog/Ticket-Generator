@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conference Registration</title>
+    <title>Ticket Registration</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,7 +20,7 @@
     <!-- Conference Registration Form -->
     <div class="container">
         <h1>Your Journey to Coding Conf 2025 Starts Here</h1>
-        <p>Secure your spot at next year's biggest coding conference.</p>
+        <p id="secure-content">Secure your spot at next year's biggest coding conference.</p>
 
         <section id="registration-section">
             <form id="registration-form">
@@ -28,11 +28,17 @@
                 <div class="file-upload">
                     <label for="avatar" class="file-upload-label">
                         <img src="assests/images/icon-upload.svg" alt="Upload Icon" class="upload-icon">
-                        <span>Drag & drop your avatar here, or click to select a file</span>
+                        <span id="file"> Drag and drop or click to upload</span>
                     </label>
                     <input type="file" id="avatar" name="avatar" class="file-upload-input">
                 </div>
                 <span class="error-message"></span>
+                <div class="info-icon">
+                    <a href="https://imageresizer.com/resize-jpg" target="_blank">
+                        <img src="assests/images/icon-info.svg" alt="">
+                    </a>
+                    <h3>Upload your photo (JPG or PNG, max size: 500KB)</h3>
+                </div>
 
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>

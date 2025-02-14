@@ -3,6 +3,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const ticketContainer = document.createElement("div"); // Ticket wrapper
     ticketContainer.classList.add("ticket-container", "hidden");
     document.body.appendChild(ticketContainer); // Append to body
+     
+    const avatarInput = document.getElementById("avatar");
+    const fileUploadBox = document.querySelector(".file-upload");
+    const fileUploadText = document.getElementById("file");
+    const fileUploadpic = document.querySelector(".upload-icon")
+    // Event listener for file upload preview
+    avatarInput.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                fileUploadBox.style.backgroundImage = `url(${e.target.result})`;
+                fileUploadBox.style.backgroundSize = "100px";
+                fileUploadBox.style.backgroundPosition = "center";
+                fileUploadText.style.display = "none"; // Hide text when image is uploaded
+                fileUploadpic.style.display = "none"; // Hide icon when image is uploaded
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
 
     form.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission
@@ -38,6 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
             generateTicket(name, email, github, avatarURL);
         }
     });
+    //
 
     // Function to validate email
     function validateEmail(email) {
@@ -46,42 +69,58 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function generateTicket(name, email, github, avatar) {
+        const currentDate = new Date();
+        const options = { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        const formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+        const ticketNumber = Math.floor(100000 + Math.random() * 900000); // Random 6-digit number
+
+
         ticketContainer.innerHTML = `
             <div class="heading">
-                <h1>Congrats, ${name}!</h1>
-                <h1>Your ticket is ready.</h1>
+            <h1>Congrats, <span id="ticket-nameing">${name}!</span></h1>
+            <h2>Your ticket is ready.</h2>
             </div>
             <div class="sub-heading">
-                <p>We've emailed your ticket to</p>
-                <p>${email} and will send updates in</p>
-                <p>the run-up to the event.</p>
+            <p>We've emailed your ticket to</p>
+            <h1 id="email-content"><span id="email-name">${email}</span> and will send updates in</h1>
+            <p>the run-up to the event.</p>
             </div>
             <div class="ticket">
-                 <img src="assests/images/logo-full.svg" alt="Conference Logo" class="ticket-logo">
-                 <p class="shabi">Jan 31, 2025 / Shabi, TX</p>
-                <div class="ticket-content">
-                    <img src="${avatar}" alt="Avatar" class="avatar">
+            <img src="assests/images/logo-full.svg" alt="Conference Logo" class="ticket-logo">
+            <p class="Date">${formattedDate} / Jijo,TX</p>
+            <div class="ticket-number">
+                <p id="ticketnumber">#${ticketNumber}</p> 
+            </div>
+            <div class="ticket-content">
+                <img src="${avatar}" alt="Avatar" class="avatar">
                 <div class="github-info">
                 <p class="name-ticket">${name}</p>
-                    <div class="info">
-                        <img src="assests/images/icon-github.svg" class="git-img" alt="GitHub Icon">
-                        <p class="github-username">${github}</p>
-                    </div>
+                <div class="info">
+                    <img src="assests/images/icon-github.svg" class="git-img" alt="GitHub Icon">
+                    <p class="github-username">${github}</p>
                 </div>
-                <div class="bottom">
-                
-                
                 </div>
-        </div>
+            </div>
+            </div>
+            <div class="bottom-print">
+            <button id="print-button">Print Ticket</button>
             </div>
         `;
-    
 
+        // Add event listener for print button
+        document.getElementById("print-button").addEventListener("click", function () {
+            const printContents = ticketContainer.innerHTML;
+            const originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+            window.print();
+            document.body.innerHTML = originalContents;
+            location.reload(); // Reload the page to restore original content
+        });
 
         // Hide the form and show the ticket
         document.querySelector(".container").classList.add("hidden");
         ticketContainer.classList.remove("hidden");
     }
-
-    
 });
