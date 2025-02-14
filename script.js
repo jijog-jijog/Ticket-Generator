@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const reader = new FileReader();
             reader.onload = function (e) {
                 fileUploadBox.style.backgroundImage = `url(${e.target.result})`;
-                fileUploadBox.style.backgroundSize = "100px";
+                fileUploadBox.style.backgroundSize = "90px";
                 fileUploadBox.style.backgroundPosition = "center";
                 fileUploadText.style.display = "none"; // Hide text when image is uploaded
                 fileUploadpic.style.display = "none"; // Hide icon when image is uploaded
