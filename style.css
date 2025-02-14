@@ -270,7 +270,7 @@ button:active {
     border: 2px dashed #ccc;
     background: rgba(255, 255, 255, 0.1); /* Slight transparency */
     border-radius: 10px;
-    height: 120px; /* Ensure a consistent size */
+    width: 100%;
     text-align: center;
     cursor: pointer;
     transition: border-color 0.3s, border-width 0.3s;
