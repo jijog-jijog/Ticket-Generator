@@ -274,7 +274,7 @@ button:active {
 
 .file-upload:hover {
     transform: scale(1.05);
-    border-color: #aaa;
+    border-color: #e94f4f;
     border-width: 3px;
 }
 #file{
